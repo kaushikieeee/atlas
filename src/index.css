@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Instrument Serif", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #FAF9F6;
+  --color-surface: #F5F4EF;
+  --color-card: #FFFFFF;
+  --color-border: #EBE9E2;
+  --color-fg: #171717;
+  --color-muted: #5E5E5E;
+  --color-subtle: #8E8D8A;
+
+  --color-accent: #2563EB;
+  --color-accent-light: #DBEAFE;
+  --color-accent-dark: #1D4ED8;
+
+  --color-amber: #D97706;
+  --color-amber-light: #FEF3C7;
+
+  --color-green: #059669;
+  --color-green-light: #D1FAE5;
+
+  --color-rose: #E11D48;
+  --color-rose-light: #FFE4E6;
+
+  --color-branch-mech: #78716C;
+  --color-branch-electrical: #6366F1;
+  --color-branch-ece: #0891B2;
+  --color-branch-cs: #2563EB;
+  --color-branch-civil: #78716C;
+  --color-branch-chemical: #7C3AED;
+  --color-branch-bio: #059669;
+  --color-branch-auto: #DC2626;
+  --color-branch-aero: #0F766E;
+  --color-branch-inst: #D97706;
+}
+
+.dark {
+  --color-bg: #0A0A0A;
+  --color-surface: #141414;
+  --color-card: #1A1A1A;
+  --color-border: #2A2A2A;
+  --color-fg: #F0F0F0;
+  --color-muted: #9A9A9A;
+  --color-subtle: #6B6B6B;
+
+  --color-accent: #3B82F6;
+  --color-accent-light: #1E3A5F;
+  --color-accent-dark: #60A5FA;
+
+  --color-amber: #F59E0B;
+  --color-amber-light: #3D2E00;
+
+  --color-green: #10B981;
+  --color-green-light: #064E3B;
+
+  --color-rose: #FB7185;
+  --color-rose-light: #4C1D3A;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://atlas-eta-ruby.vercel.app/sitemap.xml
