@@ -25,7 +25,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-light text-accent text-xs font-medium mb-6">
               <BarChart3 size="14" />
-              Career Intelligence
+              Explore Every Path
             </span>
           </motion.div>
 
@@ -36,7 +36,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.08, ease }}
           >
             The Complete Map of
-            <span className="block text-fg">Engineering Careers</span>
+            <span className="block text-fg">Indian Careers</span>
           </motion.h1>
 
           <motion.p
@@ -45,7 +45,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.16, ease }}
           >
-            Explore branches, salaries, top companies, career roadmaps, interview questions, and industry opportunities — all in one place.
+            Explore courses, careers, salaries, and industry opportunities across every field — all in one place.
           </motion.p>
 
           <motion.div
