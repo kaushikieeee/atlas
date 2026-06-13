@@ -76,9 +76,9 @@ export default function Hero() {
               href="https://github.com/kaushikieeee/atlas"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 text-xs text-muted hover:text-fg transition-colors mt-2 mx-auto"
+              className="block text-center text-xs text-muted hover:text-fg transition-colors mt-2"
             >
-              <Code2 size="12" /> View source code
+              <Code2 size="12" className="inline-block mr-1 align-middle" /> View source code
             </a>
           </motion.div>
         </div>
