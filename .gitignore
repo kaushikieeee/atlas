@@ -23,3 +23,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Gemini course research prompt (personal tool)
+gemini-course-research.md
