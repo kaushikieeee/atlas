@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BarChart3, Laptop, Github } from "lucide-react";
+import { ArrowRight, BarChart3, Laptop, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { ShootingStars } from "./ui/shooting-stars";
 import { StarsBackground } from "./ui/stars-background";
@@ -78,7 +78,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-1.5 text-xs text-muted hover:text-fg transition-colors mt-2 mx-auto"
             >
-              <Github size="12" /> View source code
+              <Code2 size="12" /> View source code
             </a>
           </motion.div>
         </div>
