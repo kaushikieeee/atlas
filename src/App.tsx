@@ -30,7 +30,7 @@ function AppContent() {
       <div className="min-h-screen bg-bg flex flex-col">
         <Navigation />
         <main className="flex-1">
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.div
               key={location.pathname}
               initial={pageTransition.initial}

@@ -16,9 +16,9 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
         <div className="max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease }}
+            transition={{ duration: 0.5, ease }}
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-light text-accent text-xs font-medium mb-6">
               <BarChart3 size="14" />
@@ -28,9 +28,9 @@ export default function Hero() {
 
           <motion.h1
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.08] tracking-tight text-fg mb-6"
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease }}
+            transition={{ duration: 0.5, delay: 0.08, ease }}
           >
             The Complete Map of
             <span className="block text-fg">Engineering Careers</span>
@@ -38,17 +38,17 @@ export default function Hero() {
 
           <motion.p
             className="text-lg md:text-xl text-muted leading-relaxed max-w-2xl mb-10"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25, ease }}
+            transition={{ duration: 0.4, delay: 0.16, ease }}
           >
             Explore branches, salaries, top companies, career roadmaps, interview questions, and industry opportunities — all in one place.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease }}
+            transition={{ duration: 0.4, delay: 0.25, ease }}
           >
             <div className="flex flex-col sm:flex-row gap-3">
               <Link

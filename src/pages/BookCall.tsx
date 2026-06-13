@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-import Cal from "@calcom/embed-react";
+import { lazy, Suspense } from "react";
 import { ease } from "../lib/animations";
+
+const Cal = lazy(() => import("@calcom/embed-react"));
 
 const calUsername = import.meta.env.VITE_CAL_USERNAME;
 
@@ -47,11 +49,18 @@ export default function BookCall() {
           className="rounded-2xl overflow-hidden border border-border bg-card"
         >
           {calUsername ? (
-            <Cal
-              calLink={calUsername}
-              style={{ width: "100%", height: "700px", overflow: "scroll" }}
-              config={{ layout: "month_view" }}
-            />
+            <Suspense fallback={
+              <div className="flex flex-col items-center justify-center h-[500px] text-muted">
+                <Calendar size="32" className="text-subtle mb-4" />
+                <p className="text-sm">Loading calendar...</p>
+              </div>
+            }>
+              <Cal
+                calLink={calUsername}
+                style={{ width: "100%", height: "700px", overflow: "scroll" }}
+                config={{ layout: "month_view" }}
+              />
+            </Suspense>
           ) : (
             <div className="flex items-center justify-center h-64 text-muted text-sm">
               Cal.com username not configured. Set VITE_CAL_USERNAME in your .env file.

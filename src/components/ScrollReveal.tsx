@@ -13,14 +13,14 @@ interface ScrollRevealProps {
 
 export default function ScrollReveal({ children, className, delay = 0, direction = "up", scale }: ScrollRevealProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-40px" });
   const { prefersReducedMotion } = useAnimations();
 
   const initialOffset = {
-    up: { y: 24 },
-    down: { y: -24 },
-    left: { x: 24 },
-    right: { x: -24 },
+    up: { y: 20 },
+    down: { y: -20 },
+    left: { x: 20 },
+    right: { x: -20 },
     none: {}
   };
 
@@ -36,7 +36,7 @@ export default function ScrollReveal({ children, className, delay = 0, direction
       className={className}
       initial={initial}
       animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1 } : {}}
-      transition={{ duration: 0.6, delay, ease }}
+      transition={{ duration: 0.4, delay, ease }}
     >
       {children}
     </motion.div>

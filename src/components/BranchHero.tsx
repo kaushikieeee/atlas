@@ -31,9 +31,9 @@ export default function BranchHero({ branch, tagline, description }: BranchHeroP
 
       <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease }}
+          transition={{ duration: 0.4, ease }}
         >
           <div className="flex items-center gap-3 mb-6">
             <div
@@ -51,18 +51,18 @@ export default function BranchHero({ branch, tagline, description }: BranchHeroP
 
         <motion.p
           className="text-3xl md:text-5xl lg:text-6xl font-serif text-fg leading-[1.12] tracking-tight mb-6"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease }}
+          transition={{ duration: 0.4, delay: 0.08, ease }}
         >
           {tagline}
         </motion.p>
 
         <motion.p
           className="text-base md:text-lg text-muted leading-relaxed max-w-2xl"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease }}
+          transition={{ duration: 0.4, delay: 0.15, ease }}
         >
           {description}
         </motion.p>
