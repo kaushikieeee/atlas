@@ -47,9 +47,102 @@
       "keywords": "career guidance, tamilnadu, kaushikieee, engineering careers, placement preparation"
     }
     </script>
+
+    <style>
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #FAF9F6;
+        transition: opacity 0.5s ease;
+      }
+      .dark #splash {
+        background: #0A0A0A;
+      }
+      #splash.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #splash h1 {
+        font-family: "Instrument Serif", "Times New Roman", serif;
+        font-size: clamp(3.5rem, 12vw, 8rem);
+        color: #171717;
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+        margin: 0;
+        opacity: 0;
+        animation: splashFadeIn 0.8s 0.1s ease forwards;
+      }
+      .dark #splash h1 {
+        color: #F0F0F0;
+      }
+      #splash p {
+        font-family: "Inter", -apple-system, sans-serif;
+        font-size: clamp(0.9rem, 2vw, 1.125rem);
+        color: #5E5E5E;
+        margin: 0.5rem 0 0;
+        opacity: 0;
+        animation: splashFadeIn 0.6s 0.5s ease forwards;
+      }
+      .dark #splash p {
+        color: #9A9A9A;
+      }
+      #splash a {
+        color: #171717;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        text-decoration-color: #EBE9E2;
+      }
+      .dark #splash a {
+        color: #F0F0F0;
+        text-decoration-color: #2A2A2A;
+      }
+      #splash-bar {
+        position: absolute;
+        bottom: 15%;
+        width: 12rem;
+        height: 2px;
+        background: #EBE9E2;
+        border-radius: 999px;
+        overflow: hidden;
+        opacity: 0;
+        animation: splashFadeIn 0.3s 0.4s ease forwards;
+      }
+      .dark #splash-bar {
+        background: #2A2A2A;
+      }
+      #splash-bar-fill {
+        height: 100%;
+        width: 0%;
+        background: #2563EB;
+        border-radius: 999px;
+        animation: splashFill 1.2s 0.5s ease-in-out forwards;
+      }
+      @keyframes splashFadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes splashFill {
+        from { width: 0%; }
+        to { width: 100%; }
+      }
+    </style>
   </head>
   <body>
+    <div id="splash">
+      <h1>atlas.</h1>
+      <p>a <a href="https://kaushikieee.me" target="_blank" rel="noopener noreferrer">kaushikieee.me</a> initiative</p>
+      <div id="splash-bar"><div id="splash-bar-fill"></div></div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      setTimeout(function(){ document.getElementById('splash')?.classList.add('fade-out') }, 2000);
+    </script>
   </body>
 </html>
