@@ -7,7 +7,7 @@ interface SplashScreenProps {
 
 export default function SplashScreen({ onFinish }: SplashScreenProps) {
   useEffect(() => {
-    const timer = setTimeout(onFinish, 4500);
+    const timer = setTimeout(onFinish, 2000);
     return () => clearTimeout(timer);
   }, [onFinish]);
 
@@ -32,7 +32,7 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
           className="text-base sm:text-lg text-muted"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           a{" "}
           <a
@@ -47,19 +47,19 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
         </motion.p>
       </div>
 
-      <motion.div
-        className="absolute bottom-[15%] w-48 h-[2px] bg-border overflow-hidden rounded-full"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-      >
         <motion.div
-          className="h-full bg-accent rounded-full"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 2.5, delay: 0.9, ease: "easeInOut" }}
-        />
-      </motion.div>
+          className="absolute bottom-[15%] w-48 h-[2px] bg-border overflow-hidden rounded-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <motion.div
+            className="h-full bg-accent rounded-full"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
+          />
+        </motion.div>
     </motion.div>
   );
 }

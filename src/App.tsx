@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navigation from "./components/Navigation";
@@ -16,7 +16,8 @@ import CourseHardwareGuide from "./pages/CourseHardwareGuide";
 import Dictionary from "./pages/Dictionary";
 import DictionaryTerm from "./pages/DictionaryTerm";
 import InterviewQuestions from "./pages/InterviewQuestions";
-import About from "./pages/About";
+
+const About = lazy(() => import("./pages/About"));
 
 function AppContent() {
   const location = useLocation();
@@ -39,7 +40,7 @@ function AppContent() {
             <Route path="/tech-guide/:category/:subcategory" element={<TechGuideCategory />} />
             <Route path="/dictionary" element={<Dictionary />} />
             <Route path="/dictionary/:slug" element={<DictionaryTerm />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<Suspense fallback={null}><About /></Suspense>} />
             <Route path="/:slug/interview-questions" element={<InterviewQuestions />} />
             <Route path="/:slug" element={<BranchPage />} />
           </Routes>
