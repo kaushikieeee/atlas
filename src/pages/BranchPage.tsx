@@ -17,7 +17,7 @@ function SectionHeading({ label, title, description }: { label?: string; title: 
     <ScrollReveal>
       <div className="max-w-xl mb-10">
         {label && <span className="text-xs font-semibold tracking-widest uppercase text-muted mb-3 block">{label}</span>}
-        <h2 className="text-2xl md:text-3xl font-serif text-fg mb-3">{title}</h2>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-serif text-fg mb-3">{title}</h2>
         {description && <p className="text-muted text-sm md:text-base">{description}</p>}
       </div>
     </ScrollReveal>
@@ -110,7 +110,7 @@ export default function BranchPage() {
                 <Icon size="24" style={{ color: data.color }} />
               </div>
               <div>
-                <div className="text-xs font-semibold tracking-widest uppercase text-muted">Engineering Branch</div>
+                <div className="text-xs font-semibold tracking-widest uppercase text-muted">{data.shortName}</div>
                 <h1 className="text-2xl md:text-3xl font-semibold text-fg">{data.name}</h1>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function BranchPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
             <ScrollReveal delay={0.05}>
               <InfoCard icon={Clock} label="Duration" value={data.overview.duration} color="#2563EB" />
             </ScrollReveal>
@@ -197,23 +197,23 @@ export default function BranchPage() {
             description={data.salary.overview}
           />
 
-          <div className="grid grid-cols-3 gap-4 md:gap-6 mb-10">
+          <div className="grid grid-cols-3 gap-3 md:gap-6 mb-10">
             <ScrollReveal delay={0.05}>
-              <div className="bg-card border border-border rounded-2xl p-5 md:p-6 text-center">
-                <div className="text-xs text-muted mb-1">Average Starting</div>
-                <div className="text-xl md:text-2xl font-serif text-fg">{data.salary.averageStarting}</div>
+              <div className="bg-card border border-border rounded-2xl p-3 md:p-6 text-center">
+                <div className="text-[10px] md:text-xs text-muted mb-1">Avg Starting</div>
+                <div className="text-sm md:text-2xl font-serif text-fg">{data.salary.averageStarting}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="bg-card border border-border rounded-2xl p-5 md:p-6 text-center">
-                <div className="text-xs text-muted mb-1">Average Mid-Level</div>
-                <div className="text-xl md:text-2xl font-serif text-fg">{data.salary.averageMid}</div>
+              <div className="bg-card border border-border rounded-2xl p-3 md:p-6 text-center">
+                <div className="text-[10px] md:text-xs text-muted mb-1">Avg Mid-Level</div>
+                <div className="text-sm md:text-2xl font-serif text-fg">{data.salary.averageMid}</div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
-              <div className="bg-card border border-border rounded-2xl p-5 md:p-6 text-center">
-                <div className="text-xs text-muted mb-1">Average Senior</div>
-                <div className="text-xl md:text-2xl font-serif text-fg">{data.salary.averageSenior}</div>
+              <div className="bg-card border border-border rounded-2xl p-3 md:p-6 text-center">
+                <div className="text-[10px] md:text-xs text-muted mb-1">Avg Senior</div>
+                <div className="text-sm md:text-2xl font-serif text-fg">{data.salary.averageSenior}</div>
               </div>
             </ScrollReveal>
           </div>
@@ -266,13 +266,13 @@ export default function BranchPage() {
           <SectionHeading
             label="Industries"
             title="Industries Hiring"
-            description="Key industries that recruit mechanical engineers in India."
+            description={`Key industries that recruit ${data.shortName} professionals in India.`}
           />
 
           <div className="space-y-5">
             {data.industries.map((industry) => (
               <ScrollReveal key={industry.name} delay={0.05}>
-                <div className="bg-card border border-border rounded-2xl p-6 md:p-7">
+                <div className="bg-card border border-border rounded-2xl p-4 md:p-7">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-xl bg-surface flex items-center justify-center shrink-0 text-xs font-bold text-muted">
@@ -316,14 +316,14 @@ export default function BranchPage() {
           <SectionHeading
             label="Career Opportunities"
             title="Job Roles & Placement Chances"
-            description="Common mechanical engineering roles with placement chances by college tier."
+            description={`Common ${data.shortName} roles with placement chances by college tier.`}
           />
 
           <div className="space-y-5">
             {data.jobRoles.map((role) => (
               <ScrollReveal key={role.title} delay={0.05}>
-                <div className="bg-card border border-border rounded-2xl p-6">
-                  <div className="mb-4">
+                <div className="bg-card border border-border rounded-2xl p-4 md:p-6">
+                  <div className="mb-3 md:mb-4">
                     <div className="flex items-start justify-between gap-3 mb-1">
                       <h3 className="text-sm font-semibold text-fg">{role.title}</h3>
                     </div>
@@ -337,19 +337,19 @@ export default function BranchPage() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="grid grid-cols-3 gap-1.5 md:gap-2">
                     {[1, 2, 3].map((tierNum) => {
                       const tierData = role.tiers.find((t) => t.tier === tierNum);
                       if (!tierData) return null;
                       return (
-                        <div key={tierNum} className="bg-surface border border-border rounded-xl p-3 text-center">
-                          <div className="text-[10px] font-semibold uppercase tracking-wider text-muted mb-1.5">
-                            Tier {tierNum}
+                        <div key={tierNum} className="bg-surface border border-border rounded-lg md:rounded-xl p-1.5 md:p-3 text-center">
+                          <div className="text-[9px] md:text-[10px] font-semibold uppercase tracking-wider text-muted mb-1 md:mb-1.5">
+                            T{tierNum}
                           </div>
-                          <span className={`text-[10px] font-medium px-2 py-0.5 rounded-full ${chanceStyles[tierData.chance] || "bg-surface text-muted"}`}>
+                          <span className={`text-[9px] md:text-[10px] font-medium px-1 md:px-2 py-0.5 rounded-full ${chanceStyles[tierData.chance] || "bg-surface text-muted"}`}>
                             {tierData.chance}
                           </span>
-                          <div className="text-xs font-semibold text-fg mt-1.5">{tierData.salary}</div>
+                          <div className="text-[10px] md:text-xs font-semibold text-fg mt-1 md:mt-1.5">{tierData.salary}</div>
                         </div>
                       );
                     })}
@@ -398,8 +398,8 @@ export default function BranchPage() {
           <div className="space-y-4">
             {data.collegeTiers.tiers.map((tier) => (
               <ScrollReveal key={tier.tier} delay={0.08}>
-                <div className="bg-card border border-border rounded-2xl p-6 md:p-7">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                <div className="bg-card border border-border rounded-2xl p-4 md:p-7">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 md:gap-4 mb-3 md:mb-4">
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <h3 className="text-base font-semibold text-fg">{tier.tier}</h3>
@@ -452,7 +452,7 @@ export default function BranchPage() {
             </h3>
           </ScrollReveal>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-3 mb-10">
             {data.interviewTopics.map((topic) => (
               <ScrollReveal key={topic.topic} delay={0.04}>
                 <div className="bg-card border border-border rounded-xl px-4 py-3.5 text-center">
@@ -510,7 +510,7 @@ export default function BranchPage() {
           <SectionHeading
             label="Learning Resources"
             title="Books, Platforms & Certifications"
-            description="Recommended resources to excel in mechanical engineering."
+            description="Recommended resources to excel in your career."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -575,7 +575,7 @@ export default function BranchPage() {
           <SectionHeading
             label="Future Trends"
             title="What's Shaping the Future"
-            description="Key trends transforming mechanical engineering in India."
+            description={`Key trends transforming ${data.shortName} in India.`}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

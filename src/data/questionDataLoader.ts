@@ -23,6 +23,7 @@ const questionModules: Record<string, () => Promise<QuestionData>> = {
   "biotechnology-engineering": () => import("./branches/biotech-questions"),
   "automobile-engineering": () => import("./branches/auto-questions"),
   "instrumentation-engineering": () => import("./branches/inst-questions"),
+  "data-science": () => import("./branches/data-science-questions"),
 };
 
 export async function loadQuestions(slug: string): Promise<QuestionData | null> {
