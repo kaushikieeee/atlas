@@ -276,7 +276,6 @@ export const biotechnologyEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on biotechnology fundamentals" },
       { name: "Coursera", description: "Specialisations in genomics, bioprocessing, and drug development" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in bioprocess engineering" },
       { name: "edX", description: "Courses from MIT, Harvard on molecular biology and bioinformatics" }
     ],
     certifications: [
@@ -287,23 +286,6 @@ export const biotechnologyEngineering = {
       "ICH GCP Certification",
       "Bioinformatics Certification (NGS Data Analysis)"
     ],
-    skillLync: [
-      {
-        title: "Molecular Biology Fundamentals",
-        abbreviation: "MOL",
-        description: "DNA, RNA, protein synthesis, and gene regulation"
-      },
-      {
-        title: "Bioprocess Engineering",
-        abbreviation: "BPE",
-        description: "Fermentation, bioreactors, and downstream processing"
-      },
-      {
-        title: "Bioinformatics Basics",
-        abbreviation: "BIO",
-        description: "Sequence analysis, databases, and computational biology"
-      }
-    ]
   },
 
   futureTrends: [

@@ -276,7 +276,6 @@ export const civilEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on all civil engineering subjects" },
       { name: "Coursera", description: "Specialisations in structural engineering, BIM, and construction management" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in structural and civil domains" },
       { name: "Udemy", description: "Affordable courses on STAAD Pro, ETABS, and Primavera P6" }
     ],
     certifications: [
@@ -287,23 +286,6 @@ export const civilEngineering = {
       "GATE Qualified (for PSU recruitment)",
       "ISO 9001 Internal Auditor"
     ],
-    skillLync: [
-      {
-        title: "FEA Fundamentals",
-        abbreviation: "FEA",
-        description: "Structural analysis using finite element methods"
-      },
-      {
-        title: "Engineering Materials",
-        abbreviation: "MAT",
-        description: "Material properties and selection for construction"
-      },
-      {
-        title: "GD&T Fundamentals",
-        abbreviation: "GDT",
-        description: "Geometric dimensioning for structural detailing"
-      }
-    ]
   },
 
   futureTrends: [

@@ -266,7 +266,6 @@ export const chemicalEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on chemical engineering fundamentals" },
       { name: "Coursera", description: "Specialisations in process design, simulation, and safety" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in chemical processes" },
       { name: "Udemy", description: "Affordable courses on Aspen Plus, HYSYS, and HTRI" }
     ],
     certifications: [
@@ -277,18 +276,6 @@ export const chemicalEngineering = {
       "Six Sigma Green / Black Belt",
       "Certified Process Safety Professional (CPSP)"
     ],
-    skillLync: [
-      {
-        title: "CFD Fundamentals",
-        abbreviation: "CFD",
-        description: "Master fluid dynamics simulation for process equipment"
-      },
-      {
-        title: "FEA Fundamentals",
-        abbreviation: "FEA",
-        description: "Structural analysis for pressure vessels and piping"
-      }
-    ]
   },
 
   futureTrends: [

@@ -278,7 +278,6 @@ export const mechanicalEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on all mechanical subjects" },
       { name: "Coursera", description: "Specialisations in robotics, CAD, and manufacturing" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in mechanical domains" },
       { name: "Udemy", description: "Affordable courses on SolidWorks, CATIA, ANSYS" }
     ],
     certifications: [
@@ -289,23 +288,6 @@ export const mechanicalEngineering = {
       "NPTEL Course Certificates",
       "AutoCAD Certified Professional"
     ],
-    skillLync: [
-      {
-        title: "FEA Fundamentals",
-        abbreviation: "FEA",
-        description: "Learn structural analysis with FEM"
-      },
-      {
-        title: "CFD Fundamentals",
-        abbreviation: "CFD",
-        description: "Master fluid dynamics simulation"
-      },
-      {
-        title: "GD&T Fundamentals",
-        abbreviation: "GDT",
-        description: "Geometric dimensioning & tolerancing"
-      }
-    ]
   },
 
   futureTrends: [

@@ -268,7 +268,6 @@ export const computerScienceEngineering = {
     platforms: [
       { name: "LeetCode", description: "Platform for coding interview preparation with 2000+ problems" },
       { name: "Coursera", description: "Specialisations in AI/ML, cloud computing, and data science" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in software development and DSA" },
       { name: "Udemy", description: "Affordable courses on web development, DevOps, and system design" }
     ],
     certifications: [
@@ -279,23 +278,6 @@ export const computerScienceEngineering = {
       "Certified Kubernetes Administrator (CKA)",
       "Scrum Master Certification (CSM)"
     ],
-    skillLync: [
-      {
-        title: "DSA Fundamentals",
-        abbreviation: "DSA",
-        description: "Master data structures and algorithms for interviews"
-      },
-      {
-        title: "System Design",
-        abbreviation: "SD",
-        description: "Design scalable distributed systems"
-      },
-      {
-        title: "Web Development",
-        abbreviation: "WEB",
-        description: "Full stack web development with modern frameworks"
-      }
-    ]
   },
 
   futureTrends: [

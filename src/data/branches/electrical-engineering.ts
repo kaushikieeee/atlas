@@ -268,7 +268,6 @@ export const electricalEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on all electrical subjects" },
       { name: "Coursera", description: "Specialisations in power systems, renewables, and automation" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in electrical domains" },
       { name: "Udemy", description: "Affordable courses on MATLAB, PLC, and electrical design" }
     ],
     certifications: [
@@ -279,23 +278,6 @@ export const electricalEngineering = {
       "IEEE Membership and publications",
       "PLC & SCADA Certification"
     ],
-    skillLync: [
-      {
-        title: "EV Fundamentals",
-        abbreviation: "EV",
-        description: "Electric vehicle systems and components"
-      },
-      {
-        title: "FEA Fundamentals",
-        abbreviation: "FEA",
-        description: "Finite element analysis for electrical systems"
-      },
-      {
-        title: "CFD Fundamentals",
-        abbreviation: "CFD",
-        description: "Thermal management for power electronics"
-      }
-    ]
   },
 
   futureTrends: [

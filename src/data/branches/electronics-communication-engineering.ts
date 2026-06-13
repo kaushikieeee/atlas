@@ -282,7 +282,6 @@ export const electronicsCommunicationEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on VLSI, DSP, and communication" },
       { name: "Coursera", description: "Specialisations in VLSI CAD, embedded systems, and IoT" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in VLSI and embedded systems" },
       { name: "Udemy", description: "Affordable courses on Verilog, PCB design, and ARM programming" }
     ],
     certifications: [
@@ -293,23 +292,6 @@ export const electronicsCommunicationEngineering = {
       "Red Hat Certified Engineer",
       "MATLAB Certified Associate"
     ],
-    skillLync: [
-      {
-        title: "EV Fundamentals",
-        abbreviation: "EV",
-        description: "Electric vehicle systems and power electronics"
-      },
-      {
-        title: "FEA Fundamentals",
-        abbreviation: "FEA",
-        description: "Finite element analysis for electronics thermal design"
-      },
-      {
-        title: "Engineering Materials",
-        abbreviation: "MAT",
-        description: "Semiconductor materials and properties"
-      }
-    ]
   },
 
   futureTrends: [

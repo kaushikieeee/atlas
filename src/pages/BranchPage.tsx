@@ -1,8 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft, BookOpen, GraduationCap, ExternalLink, Users, Clock, DollarSign, Shield,
-  ChevronRight, Book, Monitor, Award, Lightbulb, HelpCircle, BarChart3, Target,
-  Zap
+  ChevronRight, Book, Monitor, Award, Lightbulb, HelpCircle, BarChart3
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { loadBranchData } from "../data/branchDataLoader";
@@ -555,27 +554,6 @@ export default function BranchPage() {
             </ScrollReveal>
           </div>
 
-          {data.resources.skillLync && data.resources.skillLync.length > 0 && (
-            <ScrollReveal>
-              <div className="bg-card border border-border rounded-2xl p-6 md:p-7">
-                <div className="flex items-center gap-2 mb-5">
-                  <Zap size="18" className="text-accent" />
-                  <h3 className="text-sm font-semibold text-fg">Skill-Lync Resources</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {data.resources.skillLync.map((resource) => (
-                    <div key={resource.title} className="bg-surface border border-border rounded-xl p-4 text-center group hover:shadow-sm transition-all duration-200">
-                      <div className="w-10 h-10 rounded-xl bg-card border border-border flex items-center justify-center mx-auto mb-3 group-hover:border-accent/30 transition-colors">
-                        <span className="text-xs font-bold text-accent">{resource.abbreviation}</span>
-                      </div>
-                      <div className="text-sm font-semibold text-fg mb-1">{resource.title}</div>
-                      <div className="text-[11px] text-muted leading-relaxed">{resource.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </ScrollReveal>
-          )}
         </div>
       </section>
 
@@ -605,26 +583,6 @@ export default function BranchPage() {
               </ScrollReveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-bg border-t border-border">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="bg-card border border-border rounded-2xl p-8 md:p-10 text-center">
-              <Target size="28" className="text-accent mx-auto mb-4" />
-              <h2 className="text-2xl md:text-3xl font-serif text-fg mb-3">
-                Is Mechanical Engineering right for you?
-              </h2>
-              <p className="text-sm text-muted max-w-md mx-auto mb-6">
-                Take a quick assessment to understand if your interests and skills align with a career in mechanical engineering.
-              </p>
-              <button className="inline-flex items-center gap-2 px-6 py-3 bg-fg text-bg rounded-xl text-sm font-medium hover:opacity-90 transition-all duration-200">
-                Take the Assessment
-                <ChevronRight size="15" />
-              </button>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 

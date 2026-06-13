@@ -282,8 +282,7 @@ export const automobileEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on vehicle dynamics, IC engines, and manufacturing" },
       { name: "Coursera", description: "Specialisations in autonomous vehicle and EV technologies" },
-      { name: "Udemy", description: "Practical courses on CAN bus, MATLAB vehicle simulation" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in automotive engineering" }
+      { name: "Udemy", description: "Practical courses on CAN bus, MATLAB vehicle simulation" }
     ],
     certifications: [
       "IATF 16949 Internal Auditor Certification",
@@ -294,23 +293,6 @@ export const automobileEngineering = {
       "ASME GD&T Certification",
       "Certified Reliability Engineer (CRE)"
     ],
-    skillLync: [
-      {
-        title: "EV Fundamentals",
-        abbreviation: "EV",
-        description: "Master electric vehicle technology and battery systems"
-      },
-      {
-        title: "Body-in-White Fundamentals",
-        abbreviation: "BIW",
-        description: "Learn automotive body structure design"
-      },
-      {
-        title: "FEA Fundamentals",
-        abbreviation: "FEA",
-        description: "Structural analysis for automotive applications"
-      }
-    ]
   },
 
   futureTrends: [

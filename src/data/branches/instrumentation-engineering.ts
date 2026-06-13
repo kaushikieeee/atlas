@@ -268,8 +268,7 @@ export const instrumentationEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on industrial instrumentation and control systems" },
       { name: "Coursera", description: "Specialisations in industrial automation, PLC programming, and IoT" },
-      { name: "Udemy", description: "Practical courses on PLC programming, HMI design, and SCADA systems" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in instrumentation and automation" }
+      { name: "Udemy", description: "Practical courses on PLC programming, HMI design, and SCADA systems" }
     ],
     certifications: [
       "Certified Automation Professional (ISA CAP)",
@@ -280,23 +279,6 @@ export const instrumentationEngineering = {
       "Six Sigma Green / Black Belt",
       "Project Management Professional (PMP)"
     ],
-    skillLync: [
-      {
-        title: "PID Control Fundamentals",
-        abbreviation: "PID",
-        description: "Master process control and loop tuning"
-      },
-      {
-        title: "PLC Programming Basics",
-        abbreviation: "PLC",
-        description: "Learn ladder logic and PLC programming"
-      },
-      {
-        title: "Industrial Automation",
-        abbreviation: "IAT",
-        description: "DCS, SCADA, and automation systems"
-      }
-    ]
   },
 
   futureTrends: [

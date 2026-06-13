@@ -65,12 +65,6 @@ interface InterviewQuestions {
   samples: SampleQuestion[];
 }
 
-interface SkillLyncResource {
-  title: string;
-  abbreviation: string;
-  description: string;
-}
-
 interface BranchData {
   id: string;
   name: string;
@@ -110,7 +104,6 @@ interface BranchData {
     books: { name: string; author: string }[];
     platforms: { name: string; description: string }[];
     certifications: string[];
-    skillLync: SkillLyncResource[];
   };
   futureTrends: { trend: string; impact: string; description: string }[];
   relatedBranches: { id: string; name: string }[];

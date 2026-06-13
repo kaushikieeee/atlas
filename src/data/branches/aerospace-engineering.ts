@@ -266,7 +266,6 @@ export const aerospaceEngineering = {
     platforms: [
       { name: "NPTEL", description: "Free courses from IITs on aerodynamics, propulsion, and structures" },
       { name: "MIT OCW", description: "World-class aerospace engineering course materials" },
-      { name: "Skill-Lync", description: "Industry-oriented PG programmes in aerospace engineering" },
       { name: "Coursera", description: "Specialisations in flight mechanics and space technologies" }
     ],
     certifications: [
@@ -277,23 +276,6 @@ export const aerospaceEngineering = {
       "Six Sigma Green / Black Belt",
       "Project Management Professional (PMP)"
     ],
-    skillLync: [
-      {
-        title: "CFD Fundamentals",
-        abbreviation: "CFD",
-        description: "Master aerodynamic and fluid dynamics simulation"
-      },
-      {
-        title: "FEA Fundamentals",
-        abbreviation: "FEA",
-        description: "Learn structural analysis for aerospace structures"
-      },
-      {
-        title: "EV Fundamentals",
-        abbreviation: "EV",
-        description: "Electric propulsion systems and batteries"
-      }
-    ]
   },
 
   futureTrends: [
