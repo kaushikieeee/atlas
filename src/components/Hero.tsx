@@ -3,14 +3,17 @@ import { ArrowRight, BarChart3, Laptop, Code2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { ShootingStars } from "./ui/shooting-stars";
 import { StarsBackground } from "./ui/stars-background";
+import CanvasSafe from "./CanvasSafe";
 import { ease } from "../lib/animations";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] pt-16 flex items-center overflow-hidden bg-bg">
       <div className="absolute inset-0">
-        <StarsBackground />
-        <ShootingStars />
+        <CanvasSafe>
+          <StarsBackground />
+          <ShootingStars />
+        </CanvasSafe>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
