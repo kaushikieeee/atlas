@@ -1,8 +1,9 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ChevronRight, Check, X, Cpu, HardDrive, Battery, Monitor, Thermometer, Zap, Shield, BookOpen, AlertTriangle, Sparkles, ArrowRight } from "lucide-react";
+import { ArrowLeft, ChevronRight, Check, X, Cpu, HardDrive, Battery, Monitor, Thermometer, Zap, Shield, BookOpen, AlertTriangle, Sparkles, ArrowRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import { getCourseProfile } from "../data/course-hardware/profiles";
+import { ease } from "../lib/animations";
 
 const hardwareIcons: Record<string, any> = {
   processor: Cpu,
@@ -81,7 +82,7 @@ export default function CourseHardwareGuide() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.6, ease }}
         >
           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-border text-muted text-[10px] font-semibold uppercase tracking-wider mb-4">
             {profile.category}
@@ -259,13 +260,20 @@ export default function CourseHardwareGuide() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             to="/tech-guide/laptop-advisor"
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-fg text-bg rounded-xl text-sm font-medium hover:opacity-90 transition-all duration-200"
           >
             Get a Personal Laptop Recommendation
             <ArrowRight size="16" />
+          </Link>
+          <Link
+            to="/book"
+            className="inline-flex items-center gap-2 px-5 py-3.5 border border-border text-fg rounded-xl text-sm font-medium hover:bg-surface transition-all duration-200"
+          >
+            <Calendar size="14" />
+            Book a Call with Kaushik
           </Link>
         </div>
       </div>

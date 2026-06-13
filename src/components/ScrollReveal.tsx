@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, type ReactNode } from "react";
+import { ease, useAnimations } from "../lib/animations";
 
 interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
   direction?: "up" | "down" | "left" | "right" | "none";
+  scale?: boolean;
 }
 
-export default function ScrollReveal({ children, className, delay = 0, direction = "up" }: ScrollRevealProps) {
+export default function ScrollReveal({ children, className, delay = 0, direction = "up", scale }: ScrollRevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { prefersReducedMotion } = useAnimations();
 
-  const directionMap = {
+  const initialOffset = {
     up: { y: 24 },
     down: { y: -24 },
     left: { x: 24 },
@@ -21,13 +24,19 @@ export default function ScrollReveal({ children, className, delay = 0, direction
     none: {}
   };
 
+  const initial = {
+    opacity: 0,
+    ...(prefersReducedMotion ? {} : initialOffset[direction]),
+    ...(scale && !prefersReducedMotion ? { scale: 0.96 } : {}),
+  };
+
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, ...directionMap[direction] }}
-      animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      initial={initial}
+      animate={isInView ? { opacity: 1, x: 0, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.6, delay, ease }}
     >
       {children}
     </motion.div>

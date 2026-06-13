@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Laptop, ArrowLeft, Sparkles, BookOpen, ArrowRight } from "lucide-react";
+import { Laptop, ArrowLeft, Sparkles, BookOpen, ArrowRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
+import { ease } from "../lib/animations";
 
 const featuredTools = [
   {
@@ -44,7 +45,7 @@ export default function TechGuide() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, ease }}
           >
             <div className="flex items-center gap-2 mb-4">
               <Laptop size="22" className="text-accent" />
@@ -77,6 +78,19 @@ export default function TechGuide() {
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal delay={0.16}>
+            <div className="mt-10 p-6 bg-card border border-border rounded-2xl text-center">
+              <p className="text-sm text-muted mb-3">Still unsure? Book a 1:1 call with Kaushik for personalised advice.</p>
+              <Link
+                to="/book"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-lg hover:opacity-90 transition-all duration-200"
+              >
+                <Calendar size="14" />
+                Book a Call
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>

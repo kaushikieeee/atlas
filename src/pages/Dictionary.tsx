@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Search, ArrowLeft, ChevronRight, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { terms, alphabet, searchTerms, termCategories } from "../data/dictionary";
+import { ease } from "../lib/animations";
 import ScrollReveal from "../components/ScrollReveal";
 
 export default function Dictionary() {
@@ -40,7 +41,7 @@ export default function Dictionary() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, ease }}
           >
             <div className="flex items-center gap-2 mb-4">
               <BookOpen size="22" className="text-accent" />

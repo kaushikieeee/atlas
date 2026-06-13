@@ -1,7 +1,8 @@
 import { useState, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ChevronRight, Search, Check, ArrowRight, RotateCcw, Laptop, Cpu, Battery, Monitor, HardDrive, Weight, Sparkles, BookOpen, Code, Gamepad2, Box, Video, AlertTriangle, Shield, Star } from "lucide-react";
+import { ChevronRight, Search, Check, ArrowRight, RotateCcw, Laptop, Cpu, Battery, Monitor, HardDrive, Weight, Sparkles, BookOpen, Code, Gamepad2, Box, Video, AlertTriangle, Shield, Star, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ease } from "../lib/animations";
 import profiles, { getCourseProfile } from "../data/course-hardware/profiles";
 import type { CourseHardwareProfile } from "../data/course-hardware/profiles";
 import { laptops } from "../data/tech-guide/laptops";
@@ -94,7 +95,7 @@ function CourseCard({ profile, selected, onClick, index }: CourseCardProps) {
     <motion.button
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.03, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.4, delay: index * 0.03, ease }}
       onClick={onClick}
       className={classNames(
         "text-left w-full bg-card border rounded-xl p-4 transition-all duration-200 hover:shadow-sm",
@@ -301,7 +302,7 @@ export default function LaptopAdvisor() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.3, ease }}
       className="flex flex-col flex-1 min-h-0"
     >
       <div className="shrink-0">
@@ -365,7 +366,7 @@ export default function LaptopAdvisor() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.3, ease }}
       className="flex flex-col flex-1 min-h-0"
     >
       <div className="shrink-0">
@@ -431,7 +432,7 @@ export default function LaptopAdvisor() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.3, ease }}
       className="flex flex-col flex-1 min-h-0"
     >
       <div className="shrink-0">
@@ -487,7 +488,7 @@ export default function LaptopAdvisor() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.3, ease }}
       className="flex flex-col flex-1 min-h-0"
     >
       <div className="shrink-0">
@@ -550,7 +551,7 @@ export default function LaptopAdvisor() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -20 }}
-        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 0.3, ease }}
         className="flex flex-col flex-1 min-h-0"
       >
         <div className="text-center mb-5 shrink-0">
@@ -758,6 +759,13 @@ export default function LaptopAdvisor() {
                 </Link>
               </div>
             </div>
+            <Link
+              to="/book"
+              className="mt-3 flex items-center justify-center gap-2 p-3.5 bg-surface border border-border rounded-xl text-sm text-muted hover:text-fg hover:border-accent/20 transition-all duration-200"
+            >
+              <Calendar size="14" className="text-accent" />
+              Still unsure? Book a 1:1 call with Kaushik
+            </Link>
           </div>
           </>
         )}
@@ -791,7 +799,7 @@ export default function LaptopAdvisor() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, ease }}
           >
             <div className="flex items-center gap-2 mb-3">
               <Laptop size="22" className="text-accent" />

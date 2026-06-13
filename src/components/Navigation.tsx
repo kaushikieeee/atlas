@@ -1,16 +1,24 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Calendar } from "lucide-react";
+import { navSlideDown } from "../lib/animations";
 
 export default function Navigation() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-bg/85 backdrop-blur-lg border-b border-border/40">
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-center">
+    <motion.header
+      initial={navSlideDown.initial}
+      animate={navSlideDown.animate}
+      transition={navSlideDown.transition}
+      className="fixed top-0 left-0 right-0 z-50 bg-bg/85 backdrop-blur-lg border-b border-border/40"
+    >
+      <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
           <svg
             width="22"
             height="22"
             viewBox="0 0 32 32"
             fill="none"
-            className="text-fg transition-all duration-300 group-hover:rotate-45"
+            className="text-fg transition-all duration-500 group-hover:rotate-180"
           >
             <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.5"/>
             <circle cx="16" cy="16" r="6" stroke="currentColor" strokeWidth="1.5"/>
@@ -21,7 +29,15 @@ export default function Navigation() {
           </svg>
           <span className="text-2xl sm:text-3xl font-serif text-fg tracking-tight">atlas.</span>
         </Link>
+
+        <Link
+          to="/book"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-muted hover:text-fg hover:bg-surface transition-all duration-200"
+        >
+          <Calendar size="14" />
+          Book a Call
+        </Link>
       </nav>
-    </header>
+    </motion.header>
   );
 }

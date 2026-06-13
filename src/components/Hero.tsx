@@ -3,6 +3,7 @@ import { ArrowRight, BarChart3, Laptop } from "lucide-react";
 import { motion } from "framer-motion";
 import { ShootingStars } from "./ui/shooting-stars";
 import { StarsBackground } from "./ui/stars-background";
+import { ease } from "../lib/animations";
 
 export default function Hero() {
   return (
@@ -17,7 +18,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.7, ease }}
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent-light text-accent text-xs font-medium mb-6">
               <BarChart3 size="14" />
@@ -29,7 +30,7 @@ export default function Hero() {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif leading-[1.08] tracking-tight text-fg mb-6"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.7, delay: 0.1, ease }}
           >
             The Complete Map of
             <span className="block text-fg">Engineering Careers</span>
@@ -39,7 +40,7 @@ export default function Hero() {
             className="text-lg md:text-xl text-muted leading-relaxed max-w-2xl mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, delay: 0.25, ease }}
           >
             Explore branches, salaries, top companies, career roadmaps, interview questions, and industry opportunities — all in one place.
           </motion.p>
@@ -47,15 +48,15 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, delay: 0.4, ease }}
           >
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to="/branches"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-fg text-bg rounded-xl text-sm font-medium hover:opacity-90 transition-all duration-200"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-fg text-bg rounded-xl text-sm font-medium hover:opacity-90 transition-all duration-200"
               >
                 Explore Branches
-                <ArrowRight size="16" />
+                <ArrowRight size="16" className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/tech-guide"

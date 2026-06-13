@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { loadBranchData } from "../data/branchDataLoader";
+import { ease } from "../lib/animations";
 import { getBranchBySlug, getBranchIcon } from "../data/branches";
 import ScrollReveal from "../components/ScrollReveal";
 import CTASection from "../components/CTASection";
@@ -90,7 +91,7 @@ export default function BranchPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, ease }}
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ backgroundColor: `${data.color}15` }}>
@@ -107,7 +108,7 @@ export default function BranchPage() {
             className="text-3xl md:text-5xl lg:text-6xl font-serif text-fg leading-[1.12] tracking-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
           >
             {data.tagline}
           </motion.p>
@@ -116,7 +117,7 @@ export default function BranchPage() {
             className="text-base md:text-lg text-muted leading-relaxed max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, delay: 0.2, ease }}
           >
             {data.description}
           </motion.p>

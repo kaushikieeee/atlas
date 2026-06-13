@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronRight, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
+import { ease } from "../lib/animations";
 import { laptops, laptopCategories, getLaptopsByCategory } from "../data/tech-guide/laptops";
 import { tablets, tabletCategories, getTabletsByCategory } from "../data/tech-guide/tablets";
 import { accessories } from "../data/tech-guide/accessories";
@@ -89,7 +90,7 @@ export default function TechGuideCategory() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.6, ease }}
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-fg leading-[1.12] tracking-tight mb-3">{data.title}</h1>
             <p className="text-base text-muted max-w-2xl mb-8">{data.description}</p>
@@ -193,10 +194,22 @@ export default function TechGuideCategory() {
                 </div>
               </ScrollReveal>
             ))}
+            <ScrollReveal>
+              <div className="mt-10 p-6 bg-card border border-border rounded-2xl text-center">
+                <p className="text-sm text-muted mb-3">Need help choosing? Book a 1:1 call with Kaushik.</p>
+                <Link
+                  to="/book"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-sm font-medium rounded-lg hover:opacity-90 transition-all duration-200"
+                >
+                  <Calendar size="14" />
+                  Book a Call
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
-          )}
-        </div>
-      </section>
+        )}
+      </div>
+    </section>
     </>
   );
 }

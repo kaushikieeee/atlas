@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { ChevronRight, HelpCircle, BookOpen, SlidersHorizontal, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { getBranchBySlug, getBranchIcon } from "../data/branches";
+import { ease } from "../lib/animations";
 import { loadQuestions } from "../data/questionDataLoader";
 import type { Question } from "../data/branches/mechanical-questions";
 import ScrollReveal from "../components/ScrollReveal";
@@ -95,7 +96,7 @@ export default function InterviewQuestions() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.6, ease }}
         >
           <div className="flex items-center gap-3 mb-4">
             {Icon && branchMeta && (

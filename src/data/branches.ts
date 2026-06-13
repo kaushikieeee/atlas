@@ -88,9 +88,9 @@ export const branches: BranchMeta[] = [
     color: "#7C3AED"
   },
   {
-    id: "biotechnology",
+    id: "biotechnology-engineering",
     name: "Biotechnology",
-    slug: "biotechnology",
+    slug: "biotechnology-engineering",
     icon: "Dna",
     salaryRange: "₹3.5 - ₹18 LPA",
     hiringIndustries: "Pharma, Healthcare, Research, Agriculture",

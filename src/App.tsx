@@ -1,5 +1,7 @@
 import { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { pageTransition } from "./lib/animations";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -16,6 +18,7 @@ const Dictionary = lazy(() => import("./pages/Dictionary"));
 const DictionaryTerm = lazy(() => import("./pages/DictionaryTerm"));
 const InterviewQuestions = lazy(() => import("./pages/InterviewQuestions"));
 const About = lazy(() => import("./pages/About"));
+const BookCall = lazy(() => import("./pages/BookCall"));
 
 function AppContent() {
   const location = useLocation();
@@ -27,23 +30,34 @@ function AppContent() {
       <div className="min-h-screen bg-bg flex flex-col">
         <Navigation />
         <main className="flex-1">
-          <Suspense fallback={null}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/branches" element={<Branches />} />
-              <Route path="/tech-guide" element={<TechGuide />} />
-              <Route path="/tech-guide/laptop-advisor" element={<LaptopAdvisor />} />
-              <Route path="/tech-guide/course-requirements/:course" element={<CourseHardwareGuide />} />
-              <Route path="/tech-guide/course-requirements" element={<CourseRequirements />} />
-              <Route path="/tech-guide/:category" element={<TechGuideCategory />} />
-              <Route path="/tech-guide/:category/:subcategory" element={<TechGuideCategory />} />
-              <Route path="/dictionary" element={<Dictionary />} />
-              <Route path="/dictionary/:slug" element={<DictionaryTerm />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/:slug/interview-questions" element={<InterviewQuestions />} />
-              <Route path="/:slug" element={<BranchPage />} />
-            </Routes>
-          </Suspense>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={location.pathname}
+              initial={pageTransition.initial}
+              animate={pageTransition.animate}
+              exit={pageTransition.exit}
+              transition={pageTransition.transition}
+            >
+              <Suspense fallback={null}>
+                <Routes location={location}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/branches" element={<Branches />} />
+                  <Route path="/tech-guide" element={<TechGuide />} />
+                  <Route path="/tech-guide/laptop-advisor" element={<LaptopAdvisor />} />
+                  <Route path="/tech-guide/course-requirements/:course" element={<CourseHardwareGuide />} />
+                  <Route path="/tech-guide/course-requirements" element={<CourseRequirements />} />
+                  <Route path="/tech-guide/:category" element={<TechGuideCategory />} />
+                  <Route path="/tech-guide/:category/:subcategory" element={<TechGuideCategory />} />
+                  <Route path="/dictionary" element={<Dictionary />} />
+                  <Route path="/dictionary/:slug" element={<DictionaryTerm />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/book" element={<BookCall />} />
+                  <Route path="/:slug/interview-questions" element={<InterviewQuestions />} />
+                  <Route path="/:slug" element={<BranchPage />} />
+                </Routes>
+              </Suspense>
+            </motion.div>
+          </AnimatePresence>
         </main>
         {!hideFooter && <Footer />}
       </div>

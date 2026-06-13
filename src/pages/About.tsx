@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useInView, AnimatePresence } from "framer-motion";
+import { ease } from "../lib/animations";
 import { ArrowUpRight, BookOpen, Search, GraduationCap, Building2, TrendingUp, FileText, ChevronDown, ExternalLink, Brain, Code, Server, Smartphone, Bot, Cpu, Zap } from "lucide-react";
 
 function useCountUp(end: number, duration: number, startOnView: boolean, ref: React.RefObject<Element | null>) {
@@ -101,7 +102,7 @@ function ResearchCard({ title, icon: Icon, desc, index }: ResearchCardProps) {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.25, ease }}
               className="overflow-hidden"
             >
               <div className="px-4 pb-4 pt-0">
@@ -213,7 +214,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.9, ease }}
           className="text-center max-w-3xl"
         >
           <motion.span
@@ -365,14 +366,14 @@ export default function About() {
                       key={i}
                       initial={{ height: 0 }}
                       whileInView={{ height: `${Math.min(h / 10, 100)}%` }}
-                      transition={{ delay: i * 0.03, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                      transition={{ delay: i * 0.03, duration: 0.5, ease }}
                       className="flex-1 bg-accent/20 rounded-t-sm relative group"
                     >
                       <motion.div
                         className="absolute inset-0 bg-accent rounded-t-sm"
                         initial={{ height: "0%" }}
                         whileInView={{ height: "100%" }}
-                        transition={{ delay: i * 0.03 + 0.2, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                        transition={{ delay: i * 0.03 + 0.2, duration: 0.4, ease }}
                       />
                     </motion.div>
                   ))}
@@ -432,7 +433,7 @@ export default function About() {
                       key={piece}
                       initial={{ opacity: 0, x: Math.random() * 100 - 50, y: Math.random() * 60 - 30, rotate: Math.random() * 20 - 10 }}
                       whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
-                      transition={{ delay: 0.3 + i * 0.12, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                      transition={{ delay: 0.3 + i * 0.12, duration: 0.6, ease }}
                       className="px-4 py-2 rounded-lg bg-accent-light text-accent text-sm font-medium"
                     >
                       {piece}

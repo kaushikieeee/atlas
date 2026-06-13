@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Briefcase, IndianRupee, Building2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { getBranchIcon, type BranchMeta } from "../data/branches";
+import { ease } from "../lib/animations";
 
 interface BranchCardProps {
   branch: BranchMeta;
@@ -16,15 +17,16 @@ export default function BranchCard({ branch, index }: BranchCardProps) {
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.06, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.5, delay: index * 0.06, ease }}
+      whileHover={{ y: -4, transition: { duration: 0.25, ease } }}
     >
       <Link
         to={`/${branch.slug}`}
-        className="group block bg-card border border-border rounded-2xl p-6 hover:shadow-sm transition-all duration-300"
+        className="group block bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:border-accent/20 transition-all duration-300"
       >
         <div className="flex items-start justify-between mb-4">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300"
+            className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-sm"
             style={{ backgroundColor: `${branch.color}15` }}
           >
             <Icon size="20" style={{ color: branch.color }} />
