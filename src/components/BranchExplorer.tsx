@@ -39,9 +39,9 @@ function ItemCard({ item, index }: { item: CategoryItem; index: number }) {
   if (item.type === "placeholder") {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, delay: index * 0.04, ease }}
+        initial={{ y: 6 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.25, delay: index * 0.03, ease }}
         className="bg-card border border-border/60 rounded-2xl p-6 opacity-60"
       >
         <div className="flex items-start justify-between mb-4">
@@ -59,9 +59,9 @@ function ItemCard({ item, index }: { item: CategoryItem; index: number }) {
   if (item.type === "course" && !item.href) {
     return (
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, delay: index * 0.04, ease }}
+        initial={{ y: 6 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.25, delay: index * 0.03, ease }}
         className="bg-card border border-border/60 rounded-2xl p-6"
       >
         <div className="flex items-start justify-between mb-4">
@@ -77,9 +77,9 @@ function ItemCard({ item, index }: { item: CategoryItem; index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay: index * 0.04, ease }}
+      initial={{ y: 6 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.25, delay: index * 0.03, ease }}
       whileHover={{ y: -3, transition: { duration: 0.2, ease } }}
     >
       <Link
@@ -141,7 +141,7 @@ function SearchResults({
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
         {results.map((item, i) => {
-          if (item.type === "branch") {
+          if (item.type === "branch" || item.type === "course") {
             const branch = branches.find((b) => b.slug === item.id);
             if (branch) return <BranchCard key={item.id} branch={branch} index={i} />;
           }
@@ -158,9 +158,9 @@ function CategoryGrid({ onSelect }: { onSelect: (name: string) => void }) {
       {categorySections.map((section, i) => (
         <motion.button
           key={section.name}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: i * 0.05, ease }}
+          initial={{ y: 8 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.3, delay: i * 0.04, ease }}
           onClick={() => onSelect(section.name)}
           className="group text-left bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:border-accent/20 transition-all duration-300"
         >
@@ -205,9 +205,9 @@ function SubcategoryGrid({
         {section.subcategories.map((sub, i) => (
           <motion.button
             key={sub.name}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: i * 0.05, ease }}
+            initial={{ y: 8 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.3, delay: i * 0.04, ease }}
             onClick={() => onSelect(sub.name)}
             className="group text-left bg-card border border-border rounded-2xl p-6 hover:shadow-lg hover:border-accent/20 transition-all duration-300"
           >
@@ -251,7 +251,7 @@ function ItemsGrid({
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
         {sub.items.map((item, i) => {
-          if (item.type === "branch") {
+          if (item.type === "branch" || item.type === "course") {
             const branch = branches.find((b) => b.slug === item.id);
             if (branch) return <BranchCard key={item.id} branch={branch} index={i} />;
           }

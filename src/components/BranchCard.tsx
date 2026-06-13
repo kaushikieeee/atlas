@@ -14,10 +14,10 @@ export default function BranchCard({ branch, index }: BranchCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ y: 6 }}
+      whileInView={{ y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.35, delay: index * 0.04, ease }}
+      transition={{ duration: 0.25, delay: index * 0.03, ease }}
       whileHover={{ y: -3, transition: { duration: 0.2, ease } }}
     >
       <Link

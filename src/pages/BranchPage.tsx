@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft, BookOpen, GraduationCap, ExternalLink, Users, Clock, DollarSign, Shield,
@@ -9,6 +10,7 @@ import { motion } from "framer-motion";
 import { loadBranchData } from "../data/branchDataLoader";
 import { ease } from "../lib/animations";
 import { getBranchBySlug, getBranchIcon } from "../data/branches";
+import { categorySections } from "../data/course-categories";
 import ScrollReveal from "../components/ScrollReveal";
 import CTASection from "../components/CTASection";
 
@@ -49,6 +51,17 @@ export default function BranchPage() {
   const { slug } = useParams<{ slug: string }>();
   const branchData = slug ? loadBranchData(slug) : null;
   const branchMeta = slug ? getBranchBySlug(slug) : null;
+
+  const breadcrumb = useMemo(() => {
+    if (!slug) return null;
+    for (const section of categorySections) {
+      for (const sub of section.subcategories) {
+        const item = sub.items.find((i) => i.id === slug);
+        if (item) return { section: section.name, subcategory: sub.name, item: item.name };
+      }
+    }
+    return null;
+  }, [slug]);
 
   if (!branchData || !branchMeta) {
     return (
@@ -95,10 +108,19 @@ export default function BranchPage() {
         </div>
 
         <div className="relative max-w-4xl mx-auto px-6 lg:px-8">
-          <Link to="/" className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-fg mb-8 transition-colors">
-            <ArrowLeft size="13" />
-            All Branches
-          </Link>
+          <nav className="flex items-center gap-1.5 text-xs text-muted mb-8">
+            <Link to="/" className="hover:text-fg transition-colors">Home</Link>
+            <ChevronRight size="10" />
+            <Link to="/branches" className="hover:text-fg transition-colors">Branches</Link>
+            {breadcrumb && (
+              <>
+                <ChevronRight size="10" />
+                <span className="text-muted">{breadcrumb.subcategory}</span>
+                <ChevronRight size="10" />
+                <span className="text-fg font-medium">{breadcrumb.item}</span>
+              </>
+            )}
+          </nav>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}
