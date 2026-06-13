@@ -368,8 +368,8 @@ Courses listed here are placeholders in the taxonomy that need full pages built.
 ## Stats
 
 | Category | Placeholder | Branch (done) | Course (done) | **Total** |
-|---|---|---|---|---|
-| Engineering & Technology | 16 | 10 | 2 | **28** |
+|---|---|---|---|---|---|
+| Engineering & Technology | 15 | 11 | 2 | **28** |
 | Applied & Pure Sciences | 14 | 1 | 0 | **15** |
 | Medical & Healthcare | 15 | 0 | 1 | **16** |
 | Business, Commerce & Finance | 12 | 0 | 2 | **14** |
@@ -380,7 +380,7 @@ Courses listed here are placeholders in the taxonomy that need full pages built.
 | Hospitality & Services | 9 | 0 | 0 | **9** |
 | Defence & Security | 7 | 0 | 0 | **7** |
 | Emerging & Interdisciplinary | 7 | 0 | 0 | **7** |
-| **Total** | **121** | **11** | **8** | **140** |
+| **Total** | **120** | **12** | **8** | **140** |
 
 ---
 

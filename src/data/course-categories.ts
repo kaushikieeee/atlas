@@ -39,8 +39,8 @@ export const categorySections: CategorySection[] = [
         name: "Computer & Tech",
         items: [
           { id: "computer-science-engineering", name: "Computer Science & Engineering", type: "branch", description: "Software development, AI/ML, data science, and systems engineering.", href: "/computer-science-engineering" },
-          { id: "artificial-intelligence-machine-learning", name: "Artificial Intelligence & Machine Learning", type: "course", description: "AI model development, deep learning, NLP, and intelligent systems.", href: "/tech-guide/course-requirements/artificial-intelligence-machine-learning" },
-          { id: "data-science", name: "Data Science", type: "course", description: "Statistical analysis, big data, visualization, and predictive modeling.", href: "/tech-guide/course-requirements/data-science" },
+          { id: "artificial-intelligence-machine-learning", name: "Artificial Intelligence & Machine Learning", type: "course", description: "AI model development, deep learning, NLP, and intelligent systems." },
+          { id: "data-science", name: "Data Science", type: "course", description: "Students learn math, statistics, and programming to extract deep insights from large unstructured datasets using AI models.", href: "/data-science" },
           { id: "cybersecurity", name: "Cybersecurity", type: "placeholder", description: "Network security, ethical hacking, cryptography, and risk management." },
           { id: "information-technology", name: "Information Technology", type: "branch", description: "IT infrastructure, networking, cloud computing, and system administration.", href: "/information-technology" },
         ],
@@ -98,7 +98,7 @@ export const categorySections: CategorySection[] = [
       {
         name: "Clinical Medicine",
         items: [
-          { id: "medicine", name: "Medicine (MBBS)", type: "course", description: "Diagnosis, treatment, and patient care across all medical fields.", href: "/tech-guide/course-requirements/medicine" },
+          { id: "medicine", name: "Medicine (MBBS)", type: "course", description: "Diagnosis, treatment, and patient care across all medical fields." },
           { id: "dentistry", name: "Dentistry", type: "placeholder", description: "Diagnosis and treatment of oral diseases and dental surgery." },
           { id: "veterinary-science", name: "Veterinary Science", type: "placeholder", description: "Animal health, disease prevention, and veterinary surgery." },
           { id: "alternative-medicine", name: "Alternative Medicine", type: "placeholder", description: "Ayurveda, homeopathy, naturopathy, and traditional medicine." },
@@ -131,7 +131,7 @@ export const categorySections: CategorySection[] = [
       {
         name: "Management",
         items: [
-          { id: "business-administration", name: "Business Administration (BBA/MBA)", type: "course", description: "Business strategy, leadership, and organisational management.", href: "/tech-guide/course-requirements/business-administration" },
+          { id: "business-administration", name: "Business Administration (BBA/MBA)", type: "course", description: "Business strategy, leadership, and organisational management." },
           { id: "human-resources", name: "HR", type: "placeholder", description: "Talent management, organisational behaviour, and workplace culture." },
           { id: "marketing", name: "Marketing", type: "placeholder", description: "Brand management, digital marketing, and consumer behaviour." },
           { id: "operations", name: "Operations", type: "placeholder", description: "Supply chain management, logistics, and operational excellence." },
@@ -140,7 +140,7 @@ export const categorySections: CategorySection[] = [
       {
         name: "Finance & Accounting",
         items: [
-          { id: "commerce", name: "Commerce (B.Com)", type: "course", description: "Accounting, taxation, financial management, and business law.", href: "/tech-guide/course-requirements/commerce" },
+          { id: "commerce", name: "Commerce (B.Com)", type: "course", description: "Accounting, taxation, financial management, and business law." },
           { id: "chartered-accountancy", name: "Chartered Accountancy", type: "placeholder", description: "Auditing, taxation, financial accounting, and corporate law." },
           { id: "auditing", name: "Auditing", type: "placeholder", description: "Internal and external audit, risk assessment, and compliance." },
           { id: "investment-banking", name: "Investment Banking", type: "placeholder", description: "M&A, capital markets, equity research, and financial modeling." },
@@ -168,7 +168,7 @@ export const categorySections: CategorySection[] = [
           { id: "anthropology", name: "Anthropology", type: "placeholder", description: "Human evolution, cultural diversity, and archaeology." },
           { id: "political-science", name: "Political Science", type: "placeholder", description: "Political theory, comparative politics, and international relations." },
           { id: "history", name: "History", type: "placeholder", description: "World history, historiography, and civilisational studies." },
-          { id: "humanities", name: "Humanities", type: "course", description: "Interdisciplinary study of human culture, philosophy, and arts.", href: "/tech-guide/course-requirements/humanities" },
+          { id: "humanities", name: "Humanities", type: "course", description: "Interdisciplinary study of human culture, philosophy, and arts." },
         ],
       },
       {
@@ -209,13 +209,13 @@ export const categorySections: CategorySection[] = [
           { id: "filmmaking", name: "Filmmaking", type: "placeholder", description: "Film direction, cinematography, editing, and screenwriting." },
           { id: "photography", name: "Photography", type: "placeholder", description: "Digital photography, lighting, and visual storytelling." },
           { id: "animation", name: "Animation", type: "placeholder", description: "2D/3D animation, VFX, and motion graphics." },
-          { id: "visual-communication", name: "Visual Communication", type: "course", description: "Visual storytelling, branding, and multimedia design.", href: "/tech-guide/course-requirements/visual-communication" },
+          { id: "visual-communication", name: "Visual Communication", type: "course", description: "Visual storytelling, branding, and multimedia design." },
         ],
       },
       {
         name: "Design",
         items: [
-          { id: "architecture", name: "Architecture", type: "course", description: "Building design, urban planning, and spatial design.", href: "/tech-guide/course-requirements/architecture" },
+          { id: "architecture", name: "Architecture", type: "course", description: "Building design, urban planning, and spatial design." },
           { id: "fashion-design", name: "Fashion Design", type: "placeholder", description: "Garment design, textile science, and fashion styling." },
           { id: "interior-design", name: "Interior Design", type: "placeholder", description: "Space planning, furniture design, and interior aesthetics." },
           { id: "ui-ux-design", name: "UI/UX Design", type: "placeholder", description: "User interface design, usability, and interaction design." },

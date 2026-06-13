@@ -8,6 +8,7 @@ import { aerospaceEngineering } from "./branches/aerospace-engineering";
 import { biotechnologyEngineering } from "./branches/biotechnology-engineering";
 import { automobileEngineering } from "./branches/automobile-engineering";
 import { instrumentationEngineering } from "./branches/instrumentation-engineering";
+import { dataScience } from "./branches/data-science";
 
 interface Industry {
   name: string;
@@ -120,6 +121,7 @@ const dataMap: Record<string, { data: BranchData; meta: typeof branchMeta }> = {
   "biotechnology-engineering": { data: biotechnologyEngineering as unknown as BranchData, meta: branchMeta },
   "automobile-engineering": { data: automobileEngineering as unknown as BranchData, meta: branchMeta },
   "instrumentation-engineering": { data: instrumentationEngineering as unknown as BranchData, meta: branchMeta },
+  "data-science": { data: dataScience as unknown as BranchData, meta: branchMeta },
 };
 
 export function loadBranchData(slug: string): { data: BranchData; meta: typeof branchMeta } | null {

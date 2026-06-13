@@ -1,4 +1,4 @@
-import { Settings, Cpu, Radio, Monitor, Building2, FlaskConical, Dna, Car, Plane, Gauge } from "lucide-react";
+import { Settings, Cpu, Radio, Monitor, Building2, FlaskConical, Dna, Car, Plane, Gauge, Database } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export interface BranchMeta {
@@ -134,12 +134,24 @@ export const branches: BranchMeta[] = [
     description: "Measurement systems, process control, industrial automation, and sensors.",
     gradient: "from-amber-50 to-amber-100",
     color: "#D97706"
+  },
+  {
+    id: "data-science",
+    name: "Data Science",
+    slug: "data-science",
+    icon: "Database",
+    salaryRange: "₹4.5 - ₹95+ LPA",
+    hiringIndustries: "BFSI, IT & Tech, E-Commerce, Healthcare, Consulting",
+    jobOpenings: "15,000+",
+    description: "Math, statistics, and programming to extract insights from large datasets using AI models.",
+    gradient: "from-blue-50 to-blue-100",
+    color: "#2563EB"
   }
 ];
 
 export function getBranchIcon(iconName: string): LucideIcon {
   const iconMap: Record<string, LucideIcon> = {
-    Settings, Cpu, Radio, Monitor, Building2, FlaskConical, Dna, Car, Plane, Gauge
+    Settings, Cpu, Radio, Monitor, Building2, FlaskConical, Dna, Car, Plane, Gauge, Database
   };
   return iconMap[iconName] || Settings;
 }

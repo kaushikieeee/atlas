@@ -1,25 +1,8 @@
 import { Link } from "react-router-dom";
-import { Laptop, ArrowLeft, Sparkles, BookOpen, ArrowRight, Calendar } from "lucide-react";
+import { Laptop, ArrowLeft, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import { ease } from "../lib/animations";
-
-const featuredTools = [
-  {
-    slug: "laptop-advisor",
-    icon: Sparkles,
-    label: "Laptop Advisor",
-    description: "Answer a few questions about your course, activities, and budget to get a personalised laptop recommendation in seconds.",
-    color: "#2563EB",
-  },
-  {
-    slug: "course-requirements",
-    icon: BookOpen,
-    label: "Course Hardware Guide",
-    description: "Browse 15+ courses to see exactly what processor, RAM, GPU, and storage your curriculum demands.",
-    color: "#059669",
-  },
-];
 
 export default function TechGuide() {
   return (
@@ -58,26 +41,6 @@ export default function TechGuide() {
               Personalised laptop recommendations and course-by-course hardware guides for engineering students.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {featuredTools.map((tool, i) => (
-              <ScrollReveal key={tool.slug} delay={i * 0.08}>
-                <Link
-                  to={`/tech-guide/${tool.slug}`}
-                  className="group block bg-gradient-to-br from-accent/[0.03] to-transparent border border-accent/20 rounded-2xl p-6 hover:shadow-sm transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ backgroundColor: `${tool.color}15` }}>
-                      <tool.icon size="22" style={{ color: tool.color }} />
-                    </div>
-                    <ArrowRight size="16" className="text-subtle group-hover:text-accent transition-colors" />
-                  </div>
-                  <h3 className="text-base font-semibold text-fg mb-1 group-hover:text-accent transition-colors">{tool.label}</h3>
-                  <p className="text-xs text-muted leading-relaxed">{tool.description}</p>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
 
           <ScrollReveal delay={0.16}>
             <div className="mt-10 p-6 bg-card border border-border rounded-2xl text-center">

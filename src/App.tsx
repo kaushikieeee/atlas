@@ -11,9 +11,6 @@ const Branches = lazy(() => import("./pages/Branches"));
 const BranchPage = lazy(() => import("./pages/BranchPage"));
 const TechGuide = lazy(() => import("./pages/TechGuide"));
 const TechGuideCategory = lazy(() => import("./pages/TechGuideCategory"));
-const LaptopAdvisor = lazy(() => import("./pages/LaptopAdvisor"));
-const CourseRequirements = lazy(() => import("./pages/CourseRequirements"));
-const CourseHardwareGuide = lazy(() => import("./pages/CourseHardwareGuide"));
 const Dictionary = lazy(() => import("./pages/Dictionary"));
 const DictionaryTerm = lazy(() => import("./pages/DictionaryTerm"));
 const InterviewQuestions = lazy(() => import("./pages/InterviewQuestions"));
@@ -22,7 +19,6 @@ const BookCall = lazy(() => import("./pages/BookCall"));
 
 function AppContent() {
   const location = useLocation();
-  const hideFooter = location.pathname === "/tech-guide/laptop-advisor";
 
   return (
     <>
@@ -43,9 +39,6 @@ function AppContent() {
                   <Route path="/" element={<Home />} />
                   <Route path="/branches" element={<Branches />} />
                   <Route path="/tech-guide" element={<TechGuide />} />
-                  <Route path="/tech-guide/laptop-advisor" element={<LaptopAdvisor />} />
-                  <Route path="/tech-guide/course-requirements/:course" element={<CourseHardwareGuide />} />
-                  <Route path="/tech-guide/course-requirements" element={<CourseRequirements />} />
                   <Route path="/tech-guide/:category" element={<TechGuideCategory />} />
                   <Route path="/tech-guide/:category/:subcategory" element={<TechGuideCategory />} />
                   <Route path="/dictionary" element={<Dictionary />} />
@@ -59,7 +52,7 @@ function AppContent() {
             </motion.div>
           </AnimatePresence>
         </main>
-        {!hideFooter && <Footer />}
+        <Footer />
       </div>
     </>
   );
