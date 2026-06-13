@@ -16,8 +16,8 @@ export default function Hero() {
         </CanvasSafe>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="max-w-3xl">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div className="max-w-3xl mx-auto lg:text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-muted leading-relaxed max-w-2xl mb-10"
+            className="text-lg md:text-xl text-muted leading-relaxed max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.16, ease }}
@@ -53,7 +53,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.25, ease }}
           >
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 lg:justify-center">
               <Link
                 to="/branches"
                 className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-fg text-bg rounded-xl text-sm font-medium hover:opacity-90 transition-all duration-200"
