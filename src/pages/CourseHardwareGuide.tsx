@@ -1,5 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, ChevronRight, Check, X, Cpu, HardDrive, Battery, Monitor, Thermometer, Zap, Shield, BookOpen, AlertTriangle, Sparkles, ArrowRight, Calendar } from "lucide-react";
+import { ArrowLeft, ChevronRight, Check, X, Cpu, HardDrive, Battery, Monitor, Thermometer, Zap, Shield, BookOpen, AlertTriangle, Sparkles, ArrowRight, Calendar, ExternalLink } from "lucide-react";
+
+const REQUEST_FORM_URL = "https://forms.gle/3KydHwVRAK831rZP7";
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import { getCourseProfile } from "../data/course-hardware/profiles";
@@ -44,12 +46,24 @@ export default function CourseHardwareGuide() {
   if (!profile) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-serif text-fg mb-3">Course not found</h1>
-          <p className="text-sm text-muted mb-6">We don't have a hardware profile for this course yet.</p>
-          <Link to="/tech-guide/course-requirements" className="inline-flex items-center gap-2 text-sm text-accent hover:underline">
-            <ArrowLeft size="14" /> Browse all courses
-          </Link>
+        <div className="text-center max-w-md">
+          <div className="text-4xl mb-4">🔍</div>
+          <h1 className="text-2xl font-serif text-fg mb-2">Course not found</h1>
+          <p className="text-sm text-muted mb-2">We don't have a hardware profile for <span className="font-mono text-fg">/{course}</span> yet.</p>
+          <p className="text-sm text-muted mb-6">Want us to add it? Let us know and we'll prioritise it.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={REQUEST_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+            >
+              <ExternalLink size="14" /> Request this course
+            </a>
+            <Link to="/tech-guide/course-requirements" className="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition-colors">
+              <ArrowLeft size="14" /> Browse all courses
+            </Link>
+          </div>
         </div>
       </div>
     );

@@ -12,6 +12,31 @@ type Step = "course" | "activities" | "budget" | "priorities" | "results";
 
 const allCourses = Object.values(profiles);
 
+const abbreviationId: Record<string, string> = {
+  ece: "electronics-and-communication-engineering",
+  eee: "electrical-engineering",
+  cse: "computer-science-engineering",
+  cs: "computer-science-engineering",
+  mech: "mechanical-engineering",
+  civil: "civil-engineering",
+  aero: "aerospace-engineering",
+  auto: "automobile-engineering",
+  biotech: "biotechnology-engineering",
+  bt: "biotechnology-engineering",
+  arch: "architecture",
+  aiml: "artificial-intelligence-machine-learning",
+  ml: "artificial-intelligence-machine-learning",
+  ai: "artificial-intelligence-machine-learning",
+  ds: "data-science",
+  mbbs: "medicine",
+  bba: "business-administration",
+  mba: "business-administration",
+  bcom: "commerce",
+  "b.com": "commerce",
+  vfx: "visual-communication",
+  viscom: "visual-communication",
+};
+
 const activityOptions = [
   {
     id: "programming", icon: Code, label: "Programming",
@@ -182,7 +207,11 @@ export default function LaptopAdvisor() {
 
   const filteredCourses = useMemo(() => {
     if (!courseQuery) return allCourses;
-    const q = courseQuery.toLowerCase();
+    const q = courseQuery.toLowerCase().trim();
+    const abbrId = abbreviationId[q];
+    if (abbrId) {
+      return allCourses.filter((p) => p.id === abbrId);
+    }
     return allCourses.filter(
       (p) =>
         p.name.toLowerCase().includes(q) ||

@@ -8,6 +8,31 @@ import profiles, { courseCategories } from "../data/course-hardware/profiles";
 
 const allCourses = Object.values(profiles);
 
+const abbreviationId: Record<string, string> = {
+  ece: "electronics-and-communication-engineering",
+  eee: "electrical-engineering",
+  cse: "computer-science-engineering",
+  cs: "computer-science-engineering",
+  mech: "mechanical-engineering",
+  civil: "civil-engineering",
+  aero: "aerospace-engineering",
+  auto: "automobile-engineering",
+  biotech: "biotechnology-engineering",
+  bt: "biotechnology-engineering",
+  arch: "architecture",
+  aiml: "artificial-intelligence-machine-learning",
+  ml: "artificial-intelligence-machine-learning",
+  ai: "artificial-intelligence-machine-learning",
+  ds: "data-science",
+  mbbs: "medicine",
+  bba: "business-administration",
+  mba: "business-administration",
+  bcom: "commerce",
+  "b.com": "commerce",
+  vfx: "visual-communication",
+  viscom: "visual-communication",
+};
+
 function HardwareBadge({ icon: Icon, text, color }: { icon: any; text: string; color: string }) {
   return (
     <span className="inline-flex items-center gap-1 text-[10px] text-muted bg-surface border border-border px-1.5 py-0.5 rounded">
@@ -24,13 +49,18 @@ export default function CourseRequirements() {
   const filtered = useMemo(() => {
     let result = allCourses;
     if (query) {
-      const q = query.toLowerCase();
-      result = result.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          p.id.includes(q)
-      );
+      const q = query.toLowerCase().trim();
+      const abbrId = abbreviationId[q];
+      if (abbrId) {
+        result = result.filter((p) => p.id === abbrId);
+      } else {
+        result = result.filter(
+          (p) =>
+            p.name.toLowerCase().includes(q) ||
+            p.category.toLowerCase().includes(q) ||
+            p.id.includes(q)
+        );
+      }
     }
     if (selectedCategory !== "all") {
       result = result.filter((p) => p.category === selectedCategory);
@@ -108,26 +138,26 @@ export default function CourseRequirements() {
             <p className="text-muted text-sm">No courses found. Try a different search.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {filtered.map((profile, i) => (
               <ScrollReveal key={profile.id} delay={i * 0.03}>
                 <Link
                   to={`/tech-guide/course-requirements/${profile.id}`}
-                  className="group block bg-card border border-border rounded-2xl p-6 hover:shadow-sm transition-all duration-300 h-full"
+                  className="group block bg-card border border-border rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:shadow-sm transition-all duration-300 h-full"
                 >
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
                     <span className="text-[10px] font-semibold uppercase tracking-wider text-muted bg-surface border border-border px-2 py-0.5 rounded">
                       {profile.category}
                     </span>
                     <ChevronRight size="14" className="text-subtle group-hover:text-accent transition-colors" />
                   </div>
-                  <h3 className="text-base font-semibold text-fg mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-sm sm:text-base font-semibold text-fg mb-1.5 sm:mb-2 group-hover:text-accent transition-colors leading-snug">
                     {profile.name}
                   </h3>
-                  <p className="text-xs text-muted leading-relaxed mb-4 line-clamp-2">
+                  <p className="text-xs text-muted leading-relaxed mb-3 sm:mb-4 line-clamp-1 sm:line-clamp-2">
                     {profile.description}
                   </p>
-                  <div className="flex flex-wrap gap-1">
+                  <div className="hidden sm:flex flex-wrap gap-1">
                     <HardwareBadge icon={Cpu} text={profile.hardwareRequirements.processor.text.split("(")[0].trim().slice(0, 30)} color="#2563EB" />
                     <HardwareBadge icon={HardDrive} text={profile.hardwareRequirements.ram.text.split(",")[0]} color="#059669" />
                     <HardwareBadge icon={Monitor} text={profile.hardwareRequirements.gpu.text.split("(")[0].trim().slice(0, 25)} color="#7C3AED" />

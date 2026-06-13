@@ -3,6 +3,8 @@ import {
   ArrowLeft, BookOpen, GraduationCap, ExternalLink, Users, Clock, DollarSign, Shield,
   ChevronRight, Book, Monitor, Award, Lightbulb, HelpCircle, BarChart3
 } from "lucide-react";
+
+const REQUEST_FORM_URL = "https://forms.gle/3KydHwVRAK831rZP7";
 import { motion } from "framer-motion";
 import { loadBranchData } from "../data/branchDataLoader";
 import { ease } from "../lib/animations";
@@ -51,13 +53,24 @@ export default function BranchPage() {
   if (!branchData || !branchMeta) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-serif text-fg mb-3">Branch not found</h1>
-          <p className="text-muted text-sm mb-6">We haven't published data for this branch yet.</p>
-          <Link to="/" className="inline-flex items-center gap-2 text-sm text-accent hover:underline">
-            <ArrowLeft size="14" />
-            Back to Home
-          </Link>
+        <div className="text-center max-w-md">
+          <div className="text-4xl mb-4">🔍</div>
+          <h1 className="text-2xl font-serif text-fg mb-2">Branch not found</h1>
+          <p className="text-muted text-sm mb-2">We haven't published data for <span className="font-mono text-fg">/{slug}</span> yet.</p>
+          <p className="text-muted text-sm mb-6">Want us to add it? Let us know and we'll prioritise it.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={REQUEST_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+            >
+              <ExternalLink size="14" /> Request this branch
+            </a>
+            <Link to="/branches" className="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition-colors">
+              <ArrowLeft size="14" /> Browse categories
+            </Link>
+          </div>
         </div>
       </div>
     );

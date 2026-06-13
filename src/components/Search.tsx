@@ -36,14 +36,31 @@ export default function GlobalSearch() {
     }
   }, [isOpen]);
 
+  const branchAbbreviationSlug: Record<string, string> = {
+    ece: "electronics-and-communication-engineering",
+    eee: "electrical-engineering",
+    cse: "computer-science-engineering",
+    cs: "computer-science-engineering",
+    mech: "mechanical-engineering",
+    civil: "civil-engineering",
+    aero: "aerospace-engineering",
+    auto: "automobile-engineering",
+    biotech: "biotechnology-engineering",
+    bt: "biotechnology-engineering",
+    chem: "chemical-engineering",
+    inst: "instrumentation-engineering",
+  };
+
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.toLowerCase();
 
     const items: SearchResult[] = [];
 
+    const abbrSlug = branchAbbreviationSlug[q];
     branches.forEach((b) => {
-      if (b.name.toLowerCase().includes(q) || b.description.toLowerCase().includes(q)) {
+      const match = abbrSlug ? b.slug === abbrSlug : (b.name.toLowerCase().includes(q) || b.description.toLowerCase().includes(q));
+      if (match) {
         items.push({ label: b.name, description: b.description, href: `/${b.slug}`, category: "Branch" });
       }
     });
