@@ -141,7 +141,10 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
-      setTimeout(function(){ document.getElementById('splash')?.classList.add('fade-out') }, 2000);
+      setTimeout(function(){
+        var s = document.getElementById('splash');
+        if (s) { s.classList.add('fade-out'); setTimeout(function(){ s.remove() }, 600); }
+      }, 2000);
     </script>
   </body>
 </html>

@@ -21,10 +21,6 @@ function AppContent() {
   const location = useLocation();
   const hideFooter = location.pathname === "/tech-guide/laptop-advisor";
 
-  useEffect(() => {
-    document.getElementById("splash")?.remove();
-  }, []);
-
   return (
     <>
       <ScrollToTop />
