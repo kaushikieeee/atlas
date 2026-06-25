@@ -21,7 +21,7 @@ interface Star {
   scale: number;
 }
 
-function createStar(w: number, h: number): Star {
+function createStar(w: number, h: number, minSpeed: number, maxSpeed: number): Star {
   const side = Math.floor(Math.random() * 4);
   let x: number, y: number;
   switch (side) {
@@ -33,7 +33,7 @@ function createStar(w: number, h: number): Star {
   return {
     x, y,
     angle: Math.atan2(h / 2 - y, w / 2 - x) * (180 / Math.PI),
-    speed: Math.random() * 30 + 5,
+    speed: Math.random() * (maxSpeed - minSpeed) + minSpeed,
     distance: 0,
     scale: 1,
   };
@@ -71,7 +71,7 @@ export function ShootingStars({
     const schedule = () => {
       const delay = Math.random() * (maxDelay - minDelay) + minDelay;
       return setTimeout(() => {
-        stars.push(createStar(canvas.width, canvas.height));
+        stars.push(createStar(canvas.width, canvas.height, minSpeed, maxSpeed));
         if (stars.length > 30) stars = stars.slice(-30);
         schedule();
       }, delay);
